@@ -12,5 +12,6 @@ que describe su forma de instalacion.
 
 ## Diagrama UML
 ### A continuacion se muestra el diagrama UML propuesto
-![UML](diagramaAquisiciones.png)
 
+
+![diagramaAdquisiones](https://github.com/camgany/PRIMERPARCIALBaseDeDatosAvanzadas/assets/84194948/48805a6f-ec85-4268-9456-0280c5dd1e94)

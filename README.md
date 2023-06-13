@@ -11,25 +11,154 @@ que describe su forma de instalacion.
 # PROVISIÓN DE ALIMENTOS FRESCOS (ABARROTES Y CONDIMENTOS EN GENERAL) 
 La Policía Boliviana requiere una sólida base de datos para gestionar eficientemente su sistema de suministros y recursos, con el objetivo de optimizar sus operaciones y garantizar la disponibilidad de los productos necesarios para cumplir con sus responsabilidades y funciones. Esta base de datos es fundamental para llevar un control detallado de proveedores, pedidos, productos, inventario, facturación, personal y consumo, permitiendo a la institución mantener un registro completo y actualizado de todos los aspectos relacionados con sus suministros.
 
-La gestión de proveedores es esencial para establecer y mantener relaciones comerciales sólidas. La tabla "Proveedor" almacena información clave, como el nombre del proveedor, su dirección y número de teléfono. Esta información facilita la comunicación y la identificación de los proveedores que suministran los productos necesarios para el funcionamiento diario de la Policía Boliviana.
+La base de datos proporcionada presenta una estructura de tablas que permite almacenar información relacionada con una organización policial en Bolivia. A continuación, se proporciona una descripción de las tablas y su importancia para la Policía Boliviana:
 
-El seguimiento de los pedidos es crucial para garantizar que los suministros se soliciten y entreguen de manera oportuna. La tabla "Pedido" registra la información relevante, como el identificador único del pedido y la fecha en que se realizó. Además, se establece una relación con la tabla "Proveedor" para vincular cada pedido con el proveedor correspondiente. Esta relación permite un seguimiento eficiente de los proveedores asociados a cada pedido y facilita la planificación de las entregas.
+- Tabla "Direccion":
 
-La tabla "Producto" almacena detalles esenciales sobre los productos utilizados por la Policía Boliviana. Cada producto tiene un identificador único, nombre, precio y cantidad en stock. Esta información permite llevar un control exhaustivo del inventario, conocer la disponibilidad de cada producto y planificar adecuadamente las compras y reposiciones necesarias.
+Descripción: Almacena información sobre las direcciones, como el número de la dirección, la calle, la zona y la ciudad.
+Importancia: Permite registrar y recuperar direcciones asociadas a personas, estaciones policiales, proveedores, entre otros. Es fundamental para establecer la ubicación física de los distintos elementos de la base de datos.
 
-El registro de los detalles de cada pedido se realiza en la tabla "DetallePedido". Aquí se vinculan los productos solicitados en cada pedido, incluyendo el identificador del pedido, el identificador del producto y la cantidad solicitada. Esta tabla permite un seguimiento preciso de los productos incluidos en cada pedido y facilita la gestión de las entregas y los niveles de stock.
+- Tabla "Personas":
 
-El control del inventario es fundamental para asegurar la disponibilidad de los productos necesarios. La tabla "Stock" registra la cantidad disponible de cada producto, permitiendo una gestión eficiente de las existencias y facilitando la planificación de las compras y distribución interna.
+Descripción: Contiene información personal de las personas, como su nombre, apellidos, identificación de dirección y número de teléfono.
+Importancia: Permite almacenar y administrar los datos básicos de las personas relacionadas con la Policía Boliviana, como empleados, clientes, etc.
 
-La generación de facturas es esencial para mantener un registro financiero preciso. La tabla "Factura" almacena información relevante sobre las facturas generadas a partir de los pedidos, como el identificador único de la factura, el identificador del pedido asociado, la fecha de emisión y el monto total. Esta información permite llevar un control detallado de las transacciones financieras y facilita la generación de informes contables y de seguimiento.
+- Tabla "Empleados":
 
-La gestión del personal es otro aspecto clave en la base de datos propuesta. La tabla "Personal" almacena información sobre el personal de la Policía Boliviana, incluyendo su identificador único, nombre, puesto y número de teléfono. Esto facilita la identificación y contacto del personal involucrado en los procesos de adquisición y consumo de suministros.
+Descripción: Registra información sobre los empleados, incluyendo su identificación y el vínculo con la tabla "Personas".
+Importancia: Permite gestionar y rastrear los datos de los empleados de la Policía Boliviana, asociando cada empleado con su correspondiente entrada en la tabla "Personas".
 
-El registro de recepción en la tabla "RegistroRecepcion" permite un seguimiento detallado de las entregas realizadas por el personal. Se registra el identificador único de cada registro de recepción, así como el identificador del personal y del producto asociados, la cantidad recibida y la fecha de recepción. Esto brinda un control exhaustivo sobre las entregas y contribuye a la gestión eficiente de los suministros.
+- Tabla "Roles":
 
-Finalmente, la tabla "Consumo" registra el uso de productos por parte del personal. Se almacena el identificador único de cada registro de consumo, junto con el identificador del personal y del producto asociados, la cantidad utilizada y la fecha de consumo. Esta información permite un seguimiento preciso de los productos consumidos y facilita la planificación de las reposiciones necesarias.
+Descripción: Almacena los roles o cargos que pueden desempeñar los empleados.
+Importancia: Facilita la asignación y administración de roles o cargos específicos a los empleados de la Policía Boliviana, lo cual es útil para la gestión de autoridades y responsabilidades dentro de la organización.
+Tabla "Empleado_Rol":
+
+Descripción: Establece la relación entre los empleados y los roles que desempeñan, mediante la asignación de identificadores de empleado y rol.
+Importancia: Permite asociar los empleados con sus respectivos roles o cargos en la organización policial.
+
+- Tabla "Clientes":
+
+Descripción: Almacena información de los clientes, incluyendo su identificación y su relación con la tabla "Personas", además del correo electrónico.
+Importancia: Es útil para registrar y administrar los datos de los clientes o personas externas a la Policía Boliviana que interactúan con la organización en algún contexto específico.
+
+- Tabla "Estaciones_Policiales":
+
+Descripción: Registra información sobre las estaciones policiales, como su nombre, identificación de dirección y número de teléfono.
+Importancia: Permite mantener un registro de las estaciones policiales en Bolivia, incluyendo sus ubicaciones y datos de contacto, lo cual es esencial para la gestión y coordinación de operaciones policiales en diferentes áreas geográficas.
+
+- Tabla "Periodos":
+
+Descripción: Almacena información sobre los periodos de tiempo, incluyendo la gestión y el trimestre.
+Importancia: Es útil para organizar y clasificar las provisiones o suministros realizados en períodos específicos, lo que facilita la gestión de inventarios y la generación de informes.
+
+- Tabla "Provisiones":
+
+Descripción: Registra información detallada sobre las provisiones realizadas en las estaciones policiales en un periodo determinado.
+Importancia: Permite gestionar y rastrear las provisiones realizadas a las estaciones policiales en términos de fecha, total y otras características, lo que es crucial para la administración de recursos y suministros.
 
 En conclusión, la Policía Boliviana necesita esta base de datos para optimizar su gestión de suministros, asegurar la disponibilidad de productos esenciales y garantizar un control detallado de sus operaciones logísticas y financieras. Mediante el uso de esta base de datos, la institución podrá tomar decisiones informadas, mejorar la eficiencia y garantizar un adecuado abastecimiento de recursos, lo que contribuirá a fortalecer su capacidad operativa y cumplir con sus responsabilidades de manera efectiva.
+
+### El archivo "stored_procedures.sql" contiene una serie de procedimientos almacenados en lenguaje SQL. Los procedimientos almacenados son fragmentos de código que se guardan en la base de datos y se pueden ejecutar posteriormente. Aquí hay un resumen de cada procedimiento almacenado definido en el archivo:
+
+- Procedimiento "ObtenerProvisionAlimentosFrescos":
+
+Objetivo: Obtener los detalles de la provisión de alimentos frescos para una estación policial y periodo específicos.
+Parámetros: No recibe parámetros de entrada.
+Salida: Muestra el nombre del alimento, la cantidad y el stock disponible para cada alimento en la provisión.
+
+- Procedimiento "ObtenerEmpleadosPorRol":
+
+Objetivo: Obtener una lista de empleados que desempeñan un rol específico.
+Parámetros: Recibe el ID de un rol como entrada.
+Salida: Muestra el nombre, apellido paterno y apellido materno de los empleados que tienen el rol especificado.
+
+- Procedimiento "ObtenerProveedorAlimento":
+
+Objetivo: Obtener el nombre del proveedor de un alimento específico.
+Parámetros: Recibe el ID de un alimento como entrada.
+Salida: Devuelve el nombre del proveedor correspondiente al alimento especificado.
+
+- Procedimiento "ObtenerClientesPorFechaProvision":
+
+Objetivo: Obtener una lista de clientes que están asociados a una provisión realizada en una fecha específica.
+Parámetros: Recibe una fecha de provisión como entrada.
+Salida: Muestra el ID del cliente, nombre, apellido paterno, apellido materno y correo electrónico de los clientes asociados a la provisión realizada en la fecha especificada.
+
+- Procedimiento "ObtenerAlimentosAgotados":
+
+Objetivo: Obtener una lista de alimentos que tienen un stock igual a cero.
+Parámetros: No recibe parámetros de entrada.
+Salida: Muestra todos los datos de los alimentos que tienen un stock de cero.
+Estos procedimientos almacenados proporcionan funcionalidades específicas para obtener información de la base de datos de acuerdo con los criterios y filtros especificados en cada procedimiento.
+
+### El archivo "stored_triggers.sql" contiene una serie de disparadores (triggers) definidos en lenguaje SQL. Los triggers son objetos de la base de datos que se activan automáticamente cuando ocurren ciertos eventos en la base de datos, como la inserción, eliminación o actualización de registros. Aquí hay un resumen de cada trigger definido en el archivo:
+
+- Trigger "trigger_persona_creada":
+
+Objetivo: Auditar la creación de personas registrando la fecha y hora de la acción en la tabla "Auditoria_Personas" cada vez que se inserta un nuevo registro en la tabla "Personas".
+
+- Trigger "trigger_provision_creada":
+
+Objetivo: Auditar la creación de provisiones registrando la fecha y hora de la acción en la tabla "Auditoria_Provisiones" cada vez que se inserta un nuevo registro en la tabla "Provisiones".
+
+- Trigger "trigger_provision_eliminada":
+
+Objetivo: Auditar la eliminación de provisiones registrando la fecha y hora de la acción en la tabla "Auditoria_Provisiones" cada vez que se elimina un registro de la tabla "Provisiones".
+
+- Trigger "trigger_estacion_policial_creada":
+
+Objetivo: Auditar la creación de estaciones policiales registrando la fecha y hora de la acción en la tabla "Auditoria_Estaciones_Policiales" cada vez que se inserta un nuevo registro en la tabla "Estaciones_Policiales".
+
+- Trigger "trigger_estacion_policial_eliminada":
+
+Objetivo: Auditar la eliminación de estaciones policiales registrando la fecha y hora de la acción en la tabla "Auditoria_Estaciones_Policiales" cada vez que se elimina un registro de la tabla "Estaciones_Policiales".
+
+- Trigger "trigger_alimento_creado":
+
+Objetivo: Auditar la creación de alimentos registrando la fecha y hora de la acción en la tabla "Auditoria_Alimentos" cada vez que se inserta un nuevo registro en la tabla "Alimentos".
+
+- Trigger "trigger_alimento_eliminado":
+
+Objetivo: Auditar la eliminación de alimentos registrando la fecha y hora de la acción en la tabla "Auditoria_Alimentos" cada vez que se elimina un registro de la tabla "Alimentos".
+
+- Trigger "trigger_proveedor_creado":
+
+Objetivo: Auditar la creación de proveedores registrando la fecha y hora de la acción en la tabla "Auditoria_Proveedores" cada vez que se inserta un nuevo registro en la tabla "Proveedores".
+
+- Trigger "trigger_proveedor_eliminado":
+
+Objetivo: Auditar la eliminación de proveedores registrando la fecha y hora de la acción en la tabla "Auditoria_Proveedores" cada vez que se elimina un registro de la tabla "Proveedores".
+
+- Trigger "verificar_fecha_provision":
+
+Objetivo: Verificar que no se pueda eliminar una provisión cuya fecha sea anterior a la fecha actual. Si se intenta eliminar una provisión pasada, se genera un error.
+
+- Trigger "calcular_total_provision":
+
+Objetivo: Calcular el total de una provisión automáticamente cada vez que se inserta un nuevo detalle de provisión en la tabla "Provisiones_Detalles". El trigger suma el precio por la cantidad de cada alimento en el detalle y actualiza el campo "total" en la tabla "Provisiones".
+
+- Trigger "verificar_disponibilidad_alimentos":
+
+Objetivo: Verificar que haya suficiente stock disponible para el alimento solicitado en un nuevo detalle de provisión antes de insertarlo en la tabla "Provisiones_Detalles". Si no hay suficiente stock, se genera un error.
+
+- Trigger "restar_stock_insert":
+
+Objetivo: Restar la cantidad del alimento solicitado del stock disponible en la tabla "Alimentos" cada vez que se inserta un nuevo detalle de provisión en la tabla "Provisiones_Detalles".
+
+- Trigger "verificar_telefono":
+
+Objetivo: Verificar que el número de teléfono de una persona tenga entre 7 y 8 dígitos antes de insertar un nuevo registro en la tabla "Personas". Si el número de teléfono no cumple con el rango, se genera un error.
+
+- Trigger "verificar_telefono_estacion_policial":
+
+Objetivo: Verificar que el número de teléfono de una estación policial tenga entre 7 y 8 dígitos antes de insertar un nuevo registro en la tabla "Estaciones_Policiales". Si el número de teléfono no cumple con el rango, se genera un error.
+
+- Trigger "restriccion_eliminacion_empleados_provisiones":
+
+Objetivo: Restringir la eliminación de registros en la tabla "Empleados_Provisiones" si la provisión asociada tiene una fecha anterior a la fecha actual. Se genera un error si se intenta eliminar un registro en esta situación.
+Estos triggers se utilizan para realizar acciones automáticas y asegurar la integridad y la consistencia de los datos en la base de datos.
+
 ## Diagrama UML
 ### A continuacion se muestra el diagrama UML propuesto
 
@@ -54,7 +183,7 @@ PASO 4 Se verifica la instalacion de Docker compose con el siguiente comando:
 docker-compose -v
 
 PASO 5 carpeta que contendra los archivos de configuracion de docker compose, en mi caso seria:
-mkdir PRIMERPARCIALBaseDeDatosAvanzadas
+mkdir SEGUNDOPARCIALBaseDeDatosAvanzadas
 
 PASO 6 Crear el archivo docker-compose.yml que tendra la configuracion de los contenedores de MySQL y MySQL-Replica.
 El archivo docker-compose.yml tendra la siguiente configuracion:
@@ -62,72 +191,27 @@ El archivo docker-compose.yml tendra la siguiente configuracion:
     version: "3"
 services:
   databasemaster:
-    hostname : databasemaster
     image: mysql:debian
     container_name: "databasemaster"
     ports:
       - 3326:3306
-    command: bash -c "cp /etc/mysql/master.cnf /etc/mysql/my.cnf && chown root /etc/mysql/my.cnf && chmod 644 /etc/mysql/my.cnf && docker-entrypoint.sh mysqld"
     volumes:
-      - ./master.cnf:/etc/mysql/master.cnf
-      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
-    environment:
-      - MYSQL_ROOT_PASSWORD=S3cret  
-    networks:
-      - mynetwork
-  databaseslave:
-    hostname : databaseslave
-    image: mysql:debian
-    container_name: "databaseslave"
-    depends_on:
-      - databasemaster
-    ports:
-      - 3327:3306
-    command: bash -c "cp /etc/mysql/slave.cnf /etc/mysql/my.cnf && chown root /etc/mysql/my.cnf && chmod 644 /etc/mysql/my.cnf && docker-entrypoint.sh mysqld"
-    volumes:
-      - ./slave.cnf:/etc/mysql/slave.cnf
-      - ./sql/replication.sql:/docker-entrypoint-initdb.d/replication.sql
+      - ./sql/init2.sql:/docker-entrypoint-initdb.d/init2.sql
+      - ./sql/triggers.sql:/docker-entrypoint-initdb.d/triggers.sql
+      - ./sql/stored_procedures.sql:/docker-entrypoint-initdb.d/stored_procedures.sql
     environment:
       - MYSQL_ROOT_PASSWORD=S3cret
-    networks:
-      - mynetwork
-  databaseslave2:
-    hostname : databaseslave2
-    image: mysql:debian
-    container_name: "databaseslave2"
-    depends_on:
-      - databasemaster
-    ports:
-      - 3328:3306
-    command: bash -c "cp /etc/mysql/slave2.cnf /etc/mysql/my.cnf && chown root /etc/mysql/my.cnf && chmod 644 /etc/mysql/my.cnf && docker-entrypoint.sh mysqld"
-    volumes:
-      - ./slave2.cnf:/etc/mysql/slave2.cnf
-      - ./sql/replication.sql:/docker-entrypoint-initdb.d/replication.sql
-    environment:
-      - MYSQL_ROOT_PASSWORD=S3cret
-    networks:
-      - mynetwork
-networks:
-  mynetwork:
-    driver: bridge
-volumes:
-  master:
-  slave1:
+      - MYSQL_DATABASE=ALMACEN
+      
 
 
-Paso 7 Crear la carpeta sql y dentro el archivo init.sql que tendra la configuracion de las tablas y el contenido de estas para la base de datos en la base de datos master.
+Paso 7 Crear la carpeta sql y dentro el archivo init2.sql que tendra la configuracion de las tablas y el contenido de estas para la base de datos en la base de datos master.
 
-Paso 8 Crear dentro de la carpeta sql el archivo replication.sql que tendra la configuracion de la replicacion de la base de datos master a las bases de datos slaves.
-
-Paso 9 Crear el archivo master.cnf que tendra la configuracion de la base de datos master.
-
-Paso 10 Crear los archivos slave1.cnf y slave2.cnf que tendran la configuracion de las bases de datos slaves.
-
-Paso 11 Levantar los contenedores con el siguiente comando:
+Paso 8 Levantar los contenedores con el siguiente comando:
 
 docker-compose up -d
 
-Paso 12 Verificar que los contenedores esten levantados con el siguiente comando:
+Paso 9 Verificar que el contenedor esten levantados con el siguiente comando:
 
 docker ps
 
@@ -148,26 +232,7 @@ Paso 16 ingresar al contenedor de la base de datos slave con el siguiente comand
 
 docker exec -it databaseslave /bin/bash
 
-Paso 17 ingresar a la base de datos slave con el siguiente comando:
 
-mysql -u root -pS3cret
-(donde S3cret es la contraseña de la base de datos)
-
-Paso 18 Verificar que se encuentre la base de datos con el siguiente comando:
-
-show databases;
-
-Paso 19 ingresar al contenedor de la base de datos slave2 con el siguiente comando:
-
-docker exec -it databaseslave2 /bin/bash
-
-Paso 20 ingresar a la base de datos slave2 con el siguiente comando:
-
-mysql -u root -pS3cret
-
-Paso 21 Verificar que se encuentre la base de datos con el siguiente comando:
-
-show databases;
 
 
 # Como levantar localmente
@@ -181,23 +246,17 @@ show databases;
 
 ## Pasos
 1. Clonar el repositorio del proyecto
-- https://github.com/camgany/PRIMERPARCIALBaseDeDatosAvanzadas/tree/master
+- https://github.com/camgany/SEGUNDOPARCIALBaseDeDatosAvanzadas/tree/master
 2. Abrir la terminal de Debian 
 - bash 
 3. Posicionarse en la carpeta donde se clono el repositorio
 4. Posicionarse en la carpeta del repositorio
-- cd PRIMERPARCIALBaseDeDatosAvanzadas
+- cd SEGUNDOPARCIALBaseDeDatosAvanzadas
 5. Ejecutar el comando `docker-compose up -d`
 6. Esperar a que se levanten los contenedores
 7. Ejecutar el comando `docker ps` para verificar que los contenedores esten levantados
 8. Ejecutar el comando `docker exec -it databasemaster bash` para ingresar al contenedor de la base de datos master
 9. Ejecutar el comando `mysql -u root -pS3cret` para ingresar a la base de datos siendo S3cret la contraseña de la base de datos
 10. Ejecutar el comando `show databases;` para verificar que se encuentre la base de datos
-11. Ejecutar el comando `docker exec -it databaseslave bash` para ingresar al contenedor de la base de datos slave
-12. Ejecutar el comando `mysql -u root -pS3cret` para ingresar a la base de datos siendo S3cret la contraseña de la base de datos
-13. Ejecutar el comando `show databases;` para verificar que se encuentre la base de datos
-14. Ejecutar el comando `docker exec -it databaseslave2 bash` para ingresar al contenedor de la base de datos slave2
-15. Ejecutar el comando `mysql -u root -pS3cret` para ingresar a la base de datos siendo S3cret la contraseña de la base de datos
-16. Ejecutar el comando `show databases;` para verificar que se encuentre la base de datos
-17. Ejecutar `docker-compose down` para detener los contenedores
+
 

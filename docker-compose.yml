@@ -1,54 +1,16 @@
 version: "3"
 services:
   databasemaster:
-    hostname : databasemaster
     image: mysql:debian
     container_name: "databasemaster"
     ports:
       - 3326:3306
-    command: bash -c "cp /etc/mysql/master.cnf /etc/mysql/my.cnf && chown root /etc/mysql/my.cnf && chmod 644 /etc/mysql/my.cnf && docker-entrypoint.sh mysqld"
     volumes:
-      - ./master.cnf:/etc/mysql/master.cnf
-      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
-    environment:
-      - MYSQL_ROOT_PASSWORD=S3cret  
-    networks:
-      - mynetwork
-  databaseslave:
-    hostname : databaseslave
-    image: mysql:debian
-    container_name: "databaseslave"
-    depends_on:
-      - databasemaster
-    ports:
-      - 3327:3306
-    command: bash -c "cp /etc/mysql/slave.cnf /etc/mysql/my.cnf && chown root /etc/mysql/my.cnf && chmod 644 /etc/mysql/my.cnf && docker-entrypoint.sh mysqld"
-    volumes:
-      - ./slave.cnf:/etc/mysql/slave.cnf
-      - ./sql/replication.sql:/docker-entrypoint-initdb.d/replication.sql
+      - ./sql/init2.sql:/docker-entrypoint-initdb.d/init2.sql
+      - ./sql/triggers.sql:/docker-entrypoint-initdb.d/triggers.sql
+      - ./sql/stored_procedures.sql:/docker-entrypoint-initdb.d/stored_procedures.sql
     environment:
       - MYSQL_ROOT_PASSWORD=S3cret
-    networks:
-      - mynetwork
-  databaseslave2:
-    hostname : databaseslave2
-    image: mysql:debian
-    container_name: "databaseslave2"
-    depends_on:
-      - databasemaster
-    ports:
-      - 3328:3306
-    command: bash -c "cp /etc/mysql/slave2.cnf /etc/mysql/my.cnf && chown root /etc/mysql/my.cnf && chmod 644 /etc/mysql/my.cnf && docker-entrypoint.sh mysqld"
-    volumes:
-      - ./slave2.cnf:/etc/mysql/slave2.cnf
-      - ./sql/replication.sql:/docker-entrypoint-initdb.d/replication.sql
-    environment:
-      - MYSQL_ROOT_PASSWORD=S3cret
-    networks:
-      - mynetwork
-networks:
-  mynetwork:
-    driver: bridge
-volumes:
-  master:
-  slave1:
+      - MYSQL_DATABASE=ALMACEN
+      
+ 

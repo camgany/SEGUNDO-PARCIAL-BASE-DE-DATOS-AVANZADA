@@ -1,4 +1,4 @@
-# PRIMER PARCIAL Base De Datos Avanzadas
+# SEGUNDO PARCIAL Base De Datos Avanzadas
 ## Alumno: Camila Alejandra Grandy Camacho
 ## Codigo: 56784
 ## Carrera: Ingenieria de Sistemas
@@ -162,10 +162,11 @@ Estos triggers se utilizan para realizar acciones automáticas y asegurar la int
 ## Diagrama UML
 ### A continuacion se muestra el diagrama UML propuesto
 
-![diagramaAdquisiones](https://github.com/camgany/PRIMERPARCIALBaseDeDatosAvanzadas/assets/84194948/48805a6f-ec85-4268-9456-0280c5dd1e94)
+![diagramaBDDA](https://github.com/camgany/SEGUNDO-PARCIAL-BASE-DE-DATOS-AVANZADA/assets/84194948/a3f812ba-6993-4b6d-ab8e-542562ff75e2)
 ## Requisitos Tecnicos
 ### A continuacion se muestra los requisitos tecnicos para la instalacion de la base de datos
 PASO 1 Instalar WSL2 en Windows 10 con el siguiente comando:
+
 wsl --install
 (esto para poder tener acceso a la terminal de linux en windows)
 

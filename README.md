@@ -247,7 +247,7 @@ docker exec -it databaseslave /bin/bash
 
 ## Pasos
 1. Clonar el repositorio del proyecto
-- https://github.com/camgany/SEGUNDOPARCIALBaseDeDatosAvanzadas/tree/master
+- [https://github.com/camgany/SEGUNDOPARCIALBaseDeDatosAvanzadas/](https://github.com/camgany/SEGUNDO-PARCIAL-BASE-DE-DATOS-AVANZADA.git)
 2. Abrir la terminal de Debian 
 - bash 
 3. Posicionarse en la carpeta donde se clono el repositorio

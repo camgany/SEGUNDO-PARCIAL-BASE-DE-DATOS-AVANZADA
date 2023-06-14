@@ -163,39 +163,15 @@ CREATE TABLE Auditoria_Estaciones_Policiales (
   accion VARCHAR(50)
 );
 
--- Índice en Alimentos_Proveedores para mejorar la búsqueda por id_proveedor
-CREATE INDEX idx_alimentos_proveedores_proveedor ON Alimentos_Proveedores (id_proveedor);
+CREATE INDEX idx_proveedores_nombre ON Proveedores(nombre);
 
--- Índice en Alimentos para mejorar la unión con Alimentos_Proveedores
-CREATE INDEX idx_alimentos_id_alimento ON Alimentos (id_alimento);
--- Índice en Empleados_Provisiones para mejorar la búsqueda por id_empleado
-CREATE INDEX idx_empleados_provisiones_empleado ON Empleados_Provisiones (id_empleado);
+CREATE INDEX idx_roles_nombre_rol ON Roles (nombre_rol);
 
--- Índice en Provisiones para mejorar la unión con Empleados_Provisiones
-CREATE INDEX idx_provisiones_id_provision ON Provisiones (id_provision);
+CREATE INDEX idx_alimentos_precio ON Alimentos(precio);
 
--- Índice en Provisiones_Detalles para mejorar la unión con Provisiones
-CREATE INDEX idx_provisiones_detalles_id_provision ON Provisiones_Detalles (id_provision);
+CREATE INDEX idx_personas_apellidos ON Personas(apellido_paterno, apellido_materno);
 
--- Creación del índice idx_provisiones_fecha en la tabla Provisiones
-CREATE INDEX idx_provisiones_fecha ON Provisiones (fecha, id_estacionPolicial);
-
--- Creación del índice idx_provisiones_detalles en la tabla Provisiones_Detalles
-CREATE INDEX idx_provisiones_detalles ON Provisiones_Detalles (id_provision, id_alimento, cantidad);
-
--- Creación del índice idx_alimentos_nombre en la tabla Alimentos
-CREATE INDEX idx_alimentos_nombre ON Alimentos (nombre);
-
-CREATE INDEX idx_clientes_id_persona ON Clientes (id_persona);
-CREATE INDEX idx_personas_id_persona ON Personas (id_persona);
-CREATE INDEX idx_clientes_provisiones_id_cliente ON Clientes_Provisiones (id_cliente);
-CREATE INDEX idx_clientes_provisiones_id_provision ON Clientes_Provisiones (id_provision);
-CREATE INDEX idx_provisiones_detalles_id_alimento ON Provisiones_Detalles (id_alimento);
-
--- Creación del índice idx_empleados_personas_roles en la tabla Empleados
-CREATE INDEX idx_empleados_personas_roles ON Empleados (id_persona, id_empleado);
-
-CREATE INDEX idx_estacion_periodo ON Provisiones (id_estacionPolicial, id_periodo);
+CREATE INDEX idx_provisiones_fecha_total ON Provisiones(fecha, total);
 
 INSERT INTO Direccion (id_direccion, numero, calle, zona, ciudad) 
 VALUES 
